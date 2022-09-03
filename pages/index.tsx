@@ -17,6 +17,7 @@ import { ethers } from 'ethers';
 import { currency } from '../constants';
 import CountDownTimer from '../components/CountDownTimer';
 import toast, { Toaster } from "react-hot-toast"
+import AdminControls from '../components/AdminControls';
 
 
 const Home: NextPage = () => {
@@ -54,6 +55,10 @@ const Home: NextPage = () => {
 
     const {mutateAsync: WithdrawWinnings} = useContractCall(
       contract, "WithdrawWinnings"
+    )
+
+    const {data: isLotteryOperator} = useContractData(
+      contract, "lotteryOperator"
     )
 
     useEffect(() => {
@@ -129,6 +134,12 @@ const Home: NextPage = () => {
       </Head>
       <div className='flex-1'>
       <Header/>
+
+      {isLotteryOperator === address && (
+        <div className='flex-justify-center'>
+          <AdminControls />
+        </div>
+      )}
 
       {winnings > 0 && (
         <div className='max-w md:max-w-2xl lg:max-w-4xl mx-auto mt-5'>
