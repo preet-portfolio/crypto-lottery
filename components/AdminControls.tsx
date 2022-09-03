@@ -50,7 +50,7 @@ function AdminControls() {
                 id:notification,
             });
         } catch (error) {
-            toast.error("contract call failure", err);
+            toast.error("contract call failure", );
             
         }
     }
@@ -67,7 +67,7 @@ function AdminControls() {
             toast.error("Whoops something went wrong!", {
                 id:notification,
             });
-            console.error("contract call failure", err);
+            console.error("contract call failure", );
             
         }
     }
@@ -84,7 +84,7 @@ function AdminControls() {
             toast.error("Whoops something went wrong!", {
                 id:notification,
             });
-            console.error("contract call failure", err);
+            console.error("contract call failure", );
             
         }
     }
@@ -101,7 +101,7 @@ function AdminControls() {
             toast.error("Whoops something went wrong!", {
                 id:notification,
             });
-            console.error("contract call failure", err);
+            console.error("contract call failure", );
             
         }
     }
